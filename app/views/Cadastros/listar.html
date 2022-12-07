@@ -1,0 +1,59 @@
+#{extends 'main.html' /} #{set title:'valorant' /}
+<style>
+.img {
+	background-image: url("@{'public/images/images/header-background.jpg'}");
+}
+.tab{
+width: 800px;
+margin-left: auto;
+margin-right: auto;
+justify-content: center;
+}
+.form-row{
+	justify-content: right;
+	margin-left: 100px;
+}
+</style>
+
+<body class="img">
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<form action="@{Cadastros.listar}">
+				<ul>
+					<li><input name="busca" ><button>Pesquisa</button></li>
+					
+			</ul>
+			</form>
+		</div>
+	</div>
+</br>
+<div class="tab">
+	<div class="contorno-tabela">
+		<table id="table1" class="table table-light table-striped"
+			align="center">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>agente</th>
+					<th>elo</th>
+					<th>Acao</th>
+				</tr>
+			</thead>
+			<tbody>
+				#{list items:lista, as: 'a'}
+				<tr>
+					<td>${a.nome}</td>
+					<td>${a.email}</td>
+					<td>${a.agente}</td>
+					<td>${a.elo}</td>
+					<td><a class=link href='@{Cadastros.editar(a.id)}'>Editar</a>//<a
+						class=link href='@{Cadastros.deletar(a.id)}'>Deletar</a></td>
+				</tr>
+				#{/list}
+			</tbody>
+		</table>
+	</div>
+</div>
+</body>

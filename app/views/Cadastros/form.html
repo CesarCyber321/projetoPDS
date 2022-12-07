@@ -1,0 +1,96 @@
+#{extends 'main.html' /} #{set title:'Formulario' /}
+<style>
+#divForm {
+	background-color: gray;
+	width: 300px;
+	height: 350px;
+	border-radius: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 140px;
+}
+
+.conteiner {
+	margin-top: 5px;
+	text-align: center;
+}
+
+.form-group col-md-6 {
+	margin-top: 5px;
+}
+
+.img {
+	background-image: url("@{'public/images/images/header-background.jpg'}");
+}
+</style>
+
+<body class="img">
+
+
+	<div class="col">
+
+		<form action="@{Cadastros.salvar}" method="post">
+			<input class="mt-5 form-control" type="hidden" name="a.id"
+				value="${a?.id}">
+
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputEmail4">Nome</label> <input type="text"
+						class="form-control" name="a.nome" value="${a?.nome}"
+						placeholder="Nome">
+
+				</div>
+
+				<div class="form-group col-md-6">
+					<label for="inputEmail4">Email</label> <input type="email"
+						class="form-control" id="inputEmail4" name="a.email"
+						value="${a?.email}" placeholder="Email">
+				</div>
+
+
+				<div class="form-group col-md-6">
+					<label for="inputEmail4">Elo</label> <input type="text"
+						class="form-control" name="a.elo" value="${a?.elo}"
+						placeholder="Elo">
+					<div class="form-row">
+
+						<div class="form-group col-md-4">
+							<label for="inputState">Agente</label> <select id="inputState"
+								class="form-control" name="a.agente">
+								<option selected>Selecione</option>
+								<option>jett</option>
+								<option>Reyna</option>
+								<option>Youru</option>
+								<option>Neon</option>
+								<option>sova</option>
+								<option>Fade</option>
+								<option>Kaio</option>
+								<option>Skye</option>
+								<option>Sage</option>
+								<option>Killjoy</option>
+								<option>Chamber</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group col-md-6">
+					<label for="inputPassword4">Senha</label> <input type="password"
+						class="form-control" id="inputPassword4" name="a.senha"
+						placeholder="Senha">
+				</div>
+
+
+
+
+				<button type="submit" class="btn btn-primary">Enviar</button>
+
+
+
+			</div>
+		</form>
+	</div>
+
+
+
+</body>
